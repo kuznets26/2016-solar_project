@@ -61,7 +61,6 @@ def parse_star_parameters(line, star):
             star.Vy = float(s[7])
 
 
-
 def parse_planet_parameters(line, planet):
     """Считывает данные о планете из строки.
     Предполагается такая строка:
@@ -104,7 +103,6 @@ def write_space_objects_data_to_file(output_filename, space_objects):
     with open(output_filename, 'w') as out_file:
         for obj in space_objects:
             print(out_file, "%s %d %s %f" % ('1', 2, '3', 4.5))
-
 
 
 # FIXME: хорошо бы ещё сделать функцию, сохранающую статистику в заданный файл...
