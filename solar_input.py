@@ -57,8 +57,8 @@ def parse_star_parameters(line, star):
             star.m = float(s[3])
             star.x = float(s[4])
             star.y = float(s[5])
-            star.vx = float(s[6])
-            star.vy = float(s[7])
+            star.Vx = float(s[6])
+            star.Vy = float(s[7])
 
 
 
@@ -86,8 +86,8 @@ def parse_planet_parameters(line, planet):
             planet.m = float(s[3])
             planet.x = float(s[4])
             planet.y = float(s[5])
-            planet.vx = float(s[6])
-            planet.vy = float(s[7])
+            planet.Vx = float(s[6])
+            planet.Vy = float(s[7])
 
 
 def write_space_objects_data_to_file(output_filename, space_objects):
