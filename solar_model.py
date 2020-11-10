@@ -1,5 +1,6 @@
 # coding: utf-8
 # license: GPLv3
+from solar_objects import *
 
 gravitational_constant = 6.67408E-11
 """Гравитационная постоянная Ньютона G"""
@@ -13,14 +14,21 @@ def calculate_force(body, space_objects):
     **body** — тело, для которого нужно вычислить дейстующую силу.
     **space_objects** — список объектов, которые воздействуют на тело.
     """
-
     body.Fx = body.Fy = 0
     for obj in space_objects:
         if body == obj:
             continue  # тело не действует гравитационной силой на само себя!
-        r = ((body.x - obj.x) ** 2 + (body.y - obj.y) ** 2) ** 0.5
+        r = ((body.x - obj.x) ** 2 + (body.y - obj.y) ** 2) ** 0.5 + 1
         body.Fx += gravitational_constant * obj.m * body.m / r / r * (obj.x - body.x) / r
         body.Fy += gravitational_constant * obj.m * body.m / r / r * (obj.y - body.y) / r
+        if body.Fx > 0:
+            body.F_right += body.Fx
+        else:
+            body.F_left += body.Fx
+        if body.F_left + body.F_right > 10**5:
+            telo1 = Planet()
+            space_objects += [telo1]
+
 
 
 def move_space_object(body, dt):

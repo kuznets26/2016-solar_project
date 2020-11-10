@@ -38,6 +38,10 @@ class Star:
     color = "red"
     """Цвет звезды"""
 
+    F_right = 0
+
+    F_left = 0
+
     image = None
     """Изображение звезды"""
 
@@ -77,6 +81,10 @@ class Planet:
 
     color = "green"
     """Цвет планеты"""
+
+    F_right = 0
+
+    F_left = 0
 
     image = None
     """Изображение планеты"""
